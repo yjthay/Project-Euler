@@ -17,12 +17,25 @@
 #Find the value of d < 1000 for which 1/d contains the longest recurring 
 #cycle in its decimal fraction part.
 from decimal import *
-d = 1000
+d = 10
 myothercontext = Context(prec=1000)
 setcontext(myothercontext)
 
 for i in xrange(2,d+1):
     y=1.0/i
     z=Decimal(1)/Decimal(i)
-    y=str(y)
-    print y,z
+    frac = [i for i in str(z)]
+    recurrence=""
+    for j in xrange(2,len(frac)):
+        recurrence+=frac[j]
+        if recurrence ^ str(z):
+            print recurrence
+        else:
+            continue
+            
+            
+            
+regex = re.compile(r'(.+ .+)( \1)+')
+match = regex.search(str(z))
+match.group(0)
+match.group(1) 
