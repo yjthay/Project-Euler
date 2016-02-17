@@ -1,5 +1,5 @@
 import numpy as np
-fname = "C:\Users\YJ\OneDrive\Documents\Project Euler\Grids\Project Euler Q18 Grid.txt"
+fname = "C:\Users\YJ\OneDrive\Documents\Project Euler\Grids\Project Euler Q067 Grid.txt"
 fhand = open(fname)
 
 #grid=[[3],[7,4],[2,4,6],[8,5,9,3]]
@@ -14,7 +14,7 @@ pyramid = np.array(grid)
 
 answerlist=[]
 
-for rownum in xrange(len(pyramid)-1,1,-1):
+for rownum in xrange(len(pyramid)-1,0,-1):
     currentrow=pyramid[rownum]
     previousrow=pyramid[rownum-1]
     for colnum in xrange(len(currentrow)-1):
@@ -26,4 +26,4 @@ for rownum in xrange(len(pyramid)-1,1,-1):
     print answerlist
     answerlist=[]
 
-print pyramid[0][0]+max(pyramid[1])
+print pyramid[0][0]
